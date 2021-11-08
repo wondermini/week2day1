@@ -7,9 +7,17 @@
 
 import Foundation
 
-
-// p.1-1
+// p1-1
 struct ArrayPractice {
+    func printArray(array: [[Int]]) {
+        for innerArray in array {
+            for item in innerArray {
+                print(item, terminator: " ") // item + 공백(화이트 스페이스)
+            }
+            print() // 줄바꿈
+        }
+    }
+
     func fillArray(lines: Int) -> [[Int]] {
         // 전체 값을 넣어줄 빈 배열 선언
         var resultArray = [[Int]]()
@@ -37,15 +45,34 @@ struct ArrayPractice {
         return resultArray
     }
 
-    func printArray(array: [[Int]]) {
-        for innerArray in array {
-            for item in innerArray {
-                print(item, terminator: " ") // item + 공백(화이트 스페이스)
+    // p1-2
+
+    func setBoolArray(line: Int) -> [[Bool]] {
+        var resultArray = [[Bool]]()
+        for i in 1...line {
+            var tempArray = [Bool]()
+            for _ in i..<line {
+                tempArray.append(false)
             }
-            print() // 줄바꿈
+            for _ in 1...i {
+                tempArray.append(true)
+            }
+            resultArray.append(tempArray)
+        }
+        return resultArray
+    }
+
+   
+    func printArray(array: [[Bool]], newChar: Character) {
+        for i in 0..<array.count {
+            for j in 0..<array.count {
+                if array[i][j] {
+                    print(newChar, terminator: "")
+                } else {
+                    print(" ", terminator: "")
+                }
+            }
+            print()
         }
     }
 }
-
-
-

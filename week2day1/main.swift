@@ -25,5 +25,11 @@ print(sortArray11)
  */
 
 //연습문제1-1
-var arrayPractice = ArrayPractice()
-arrayPractice.printArray(array: arrayPractice.fillArray(lines: 5))
+var myArray = ArrayPractice()
+    myArray.printArray(array: myArray.fillArray(lines: 5))
+
+//연습문제1-2
+var tmpArr = myArray.setBoolArray(line: 5)
+
+myArray.printArray(array: tmpArr,newChar: "$")
+
